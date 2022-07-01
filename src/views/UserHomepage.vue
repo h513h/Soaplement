@@ -1,27 +1,27 @@
 <template>
     <Navbar></Navbar>
-    <div id="carousel" ref="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" @click.prevent="turnToProductsPage">
+    <div id="carousel" ref="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
             <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div class="carousel-inner mx-vh-70">
-            <div class="carousel-item active mx-vh-70" data-bs-interval="2000">
+        <div class="carousel-inner vh-50">
+            <div class="carousel-item active vh-50" data-bs-interval="2000">
                 <img src="https://images.unsplash.com/photo-1578499177313-0416e8f509e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
-                <div class="carousel-caption">
+                <div class="carousel-caption" @click.prevent="turnToProductsPage">
                     <h2 class="font-monospace">Soaplement</h2>
                 </div>
             </div>
-            <div class="carousel-item mx-vh-70" data-bs-interval="2000">
+            <div class="carousel-item vh-50" data-bs-interval="2000">
                 <img src="https://images.unsplash.com/photo-1557176286-97a841415173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
-                <div class="carousel-caption">
+                <div class="carousel-caption" @click.prevent="turnToProductsPage">
                     <h2 class="font-monospace">Soaplement</h2>
                 </div>
             </div>
-            <div class="carousel-item mx-vh-70" data-bs-interval="2000">
+            <div class="carousel-item vh-50" data-bs-interval="2000">
                 <img src="https://images.unsplash.com/photo-1569715442753-2eef87d75db3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
-                <div class="carousel-caption">
+                <div class="carousel-caption" @click.prevent="turnToProductsPage">
                     <h2 class="font-monospace">Soaplement</h2>
                 </div>
             </div>
