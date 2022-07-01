@@ -1,7 +1,7 @@
 <template>
     <Navbar></Navbar>
     <div class="vh-30 overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c" alt="products list" class="img-fluid">
+      <img src="https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" alt="products list" class="img-fluid">
     </div>
     <div class="container my-5 h-100 mi-vh-40">
         <div class="row justify-content-center">

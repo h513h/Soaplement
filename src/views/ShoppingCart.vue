@@ -1,14 +1,14 @@
 <template>
     <Navbar></Navbar>
     <div class="vh-30 overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c" alt="products list" class="img-fluid">
+      <img src="https://images.unsplash.com/photo-1496661415325-ef852f9e8e7c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" alt="products list" class="img-fluid">
     </div>
     <div class="container my-3 my-sm-5 font-monospace">
         <div class="row justify-content-center mb-sm-3">
             <div class="col-lg-8">
               <button type="button" class="btn btn-link p-0 mb-3 mb-sm-5" @click.prevent="backToLastPage"><i class="fa-solid fa-arrow-left"></i></button>
               <h2 class="mb-3">Shopping List</h2>
-              <div  v-if="isCartEmpty" class="vh-50 mt-5 d-flex justify-content-center align-items-center" style="background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946') center center">
+              <div  v-if="isCartEmpty" class="vh-50 mt-5 d-flex justify-content-center align-items-center" style="background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop') center center">
                 <h3 class="text-white">Your shopping cart is empty...</h3>
                 <button class="btn btn-link text-white p-0 fs-3">Let's go to shopping</button>
               </div>

@@ -1,6 +1,6 @@
 <template>
   <div class="vh-30 overflow-hidden">
-      <img src="https://images.unsplash.com/photo-1629838315663-33f681b1f9a1" alt="products list" class="img-fluid">
+      <img src="https://images.unsplash.com/photo-1629838315663-33f681b1f9a1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" alt="products list" class="img-fluid">
   </div>
   <div class="container my-5">
       <nav aria-label="breadcrumb">

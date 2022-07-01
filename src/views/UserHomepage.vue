@@ -8,19 +8,19 @@
         </div>
         <div class="carousel-inner mx-vh-70">
             <div class="carousel-item active mx-vh-70" data-bs-interval="2000">
-                <img src="https://images.unsplash.com/photo-1578499177313-0416e8f509e6" class="img-fluid" alt="picture">
+                <img src="https://images.unsplash.com/photo-1578499177313-0416e8f509e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
                 <div class="carousel-caption">
                     <h2 class="font-monospace">Soaplement</h2>
                 </div>
             </div>
             <div class="carousel-item mx-vh-70" data-bs-interval="2000">
-                <img src="https://images.unsplash.com/photo-1557176286-97a841415173" class="img-fluid" alt="picture">
+                <img src="https://images.unsplash.com/photo-1557176286-97a841415173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
                 <div class="carousel-caption">
                     <h2 class="font-monospace">Soaplement</h2>
                 </div>
             </div>
             <div class="carousel-item mx-vh-70" data-bs-interval="2000">
-                <img src="https://images.unsplash.com/photo-1569715442753-2eef87d75db3" class="img-fluid" alt="picture">
+                <img src="https://images.unsplash.com/photo-1569715442753-2eef87d75db3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
                 <div class="carousel-caption">
                     <h2 class="font-monospace">Soaplement</h2>
                 </div>
@@ -53,15 +53,15 @@
     </div>
     <div class="container-fluid py-5 p-0">
         <div class="row align-items-start">
-            <div class="col-md-6 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-mint" style="background-image: url('https://images.unsplash.com/photo-1558070510-504a0db43997')"></div>
-            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-lavender"  style="background-image: url('https://images.unsplash.com/photo-1600699260716-d5ed9a3f9efe')"></div>
-            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-milk"  style="background-image: url('https://images.unsplash.com/photo-1446126102442-f6b2b73257fd')"></div>
+            <div class="col-md-6 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-mint" style="background-image: url('https://images.unsplash.com/photo-1622576454275-729fbf6aa6eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
+            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-lavender"  style="background-image: url('https://images.unsplash.com/photo-1445510491599-c391e8046a68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
+            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-milk"  style="background-image: url('https://images.unsplash.com/photo-1446126102442-f6b2b73257fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
         </div>
         <div class="row">
-            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1585337913966-114ba3cf1f80')"></div>
-            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1442458017215-285b83f65851')"></div>
-            <div class="col-4 col-md-2 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1546842931-886c185b4c8c')"></div>
-            <div class="col-md-4 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-herb"  style="background-image: url('https://images.unsplash.com/photo-1532092367580-3bd5bc78dd9d')"></div>
+            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
+            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1507646871303-331b8f659227?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
+            <div class="col-4 col-md-2 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1546842931-886c185b4c8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
+            <div class="col-md-4 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-herb"  style="background-image: url('https://images.unsplash.com/photo-1532092367580-3bd5bc78dd9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
         </div>
     </div>
     <div class="container mb-5">
