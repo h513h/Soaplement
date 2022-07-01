@@ -1,25 +1,84 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: () => import('../views/UserHomepage.vue')
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/products',
+    name: 'products',
+    component: () => import('../views/UserProductList.vue'),
+    children: [
+      {
+        path: 'detail/:product',
+        name: 'detail/:product',
+        component: () => import('../components/ProductDetails.vue')
+      }
+    ]
+  },
+  {
+    path: '/shoppingcart',
+    name: 'shoppingcart',
+    component: () => import('../views/ShoppingCart.vue')
+  },
+  {
+    path: '/receipt',
+    name: 'receipt',
+    component: () => import('../views/ReceiptPage.vue')
+  },
+  {
+    path: '/thankyou',
+    name: 'thankyou',
+    component: () => import('../views/ThankYou.vue')
+  },
+  {
+    path: '/confirmation/:orderId',
+    name: 'confirmation',
+    component: () => import('../views/ConfirmationPage.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/LoginPage.vue')
+  },
+  {
+    path: '/dashboard',
+    name: 'dashboard',
+    component: () => import('../views/DashboardPage.vue'),
+    children: [
+      {
+        path: 'manageproducts',
+        name: 'manageproducts',
+        component: () => import('../components/ManageProducts.vue')
+      },
+      {
+        path: 'manageorders',
+        name: 'manegeorders',
+        component: () => import('../components/ManageOrders.vue')
+      },
+      {
+        path: 'managecoupons',
+        name: 'managecoupons',
+        component: () => import('../components/ManageCoupons.vue')
+      }
+    ]
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    component: () => import('../components/404Page.vue')
   }
 ]
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
+  routes,
+  scrollBehavior (to, from, savePosition) {
+    return {
+      top: 0
+    }
+  }
 })
 
 export default router
