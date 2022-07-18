@@ -8,6 +8,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
               <div class="navbar-nav">
                   <router-link class="nav-link text-center" to="/products">Products</router-link>
+                  <router-link class="nav-link text-center" to="/wishlist">Wishlist</router-link>
                   <router-link class="nav-link text-center position-relative" to="/shoppingcart" v-model="carts.length">
                     <i class="fa-solid fa-basket-shopping"></i>
                     <span class="position-absolute top-50 translate-middle p-1 bg-danger border border-light rounded-circle" :class="{'d-none':isCartEmpty}">

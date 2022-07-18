@@ -13,6 +13,13 @@
           </ol>
         </nav>
         <div class="row justify-content-end">
+          <div class="col-md-2">
+            <ul class="list-group list-group-flush flex-row flex-md-column mb-3">
+              <li class="list-group-item border-bottom mt-2 font-monospace active" role="button">ALL PRODUCTS</li>
+              <li class="list-group-item border-bottom mt-2 font-monospace" role="button" v-for="(category, i) in categories" :key="i">{{category}}</li>
+            </ul>
+            <input type="text" placeholder="Search" class="form-control" aria-describedby="search" v-model="search">
+          </div>
           <div class="col-md-10">
             <div class="row align-items-stretch">
               <Card/>
@@ -28,9 +35,10 @@
 <script>
 import NavbarAndFooter from '@/mixins/NavbarAndFooterMixin.vue'
 import Card from '@/components/ItemCard.vue'
+import GetProducts from '@/mixins/GetProductsMixins.vue'
 
 export default {
-  mixins: [NavbarAndFooter],
+  mixins: [NavbarAndFooter, GetProducts],
   components: { Card }
 }
 </script>

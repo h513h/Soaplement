@@ -16,16 +16,19 @@
           </div>
           <div class="col-md-5">
               <div class="row">
-                  <div class="col-6">
+                  <div class="col-6 d-flex flex-column justify-content-between">
+                    <div>
                       <h2 class="font-monospace">{{ product.title }}</h2>
                       <p>{{ product.characteristic }}</p>
+                    </div>
+                    <div>
+                      <p class="mt-2"><span :class="{ 'text-decoration-line-through' : product.origin_price !== product.price}">{{ product.origin_price }}</span><span class="text-danger"  v-if="product.origin_price !== product.price">${{ product.price }}</span><span class="text-center text-white bg-danger float-end py-1 px-2"  v-if="product.origin_price !== product.price">SALE</span></p>
+                    </div>
                   </div>
                   <div class="col-6">
                       <img :src="product.mainImageUrl" alt="material" class="img-fluid">
                   </div>
               </div>
-              <p class="text-decoration-line-through fs-3 m-0 font-monospace">{{ product.origin_price }}</p>
-              <p class="text-danger ml-2 fs-5 font-monospace">${{ product.price }}</p>
               <div class="row mt-3 justify-content-center">
                   <div class="col-md-10 d-flex text-center">
                       <div class="col-4">

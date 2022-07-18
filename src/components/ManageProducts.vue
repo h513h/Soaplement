@@ -36,6 +36,7 @@
                 <td>{{currency(item.price)}}</td>
                 <td v-if="item.is_enabled" class="text-success">Available</td>
                 <td v-else class="text-danger">Invalid</td>
+                <td @click="copyItem(item)" role="button" class="text-center">copy</td>
                 <td @click="openModal(false,item)" role="button" class="text-center"><i class="fa-solid fa-pen-to-square text-info"></i></td>
             </tr>
         </tbody>
@@ -74,8 +75,28 @@ export default {
           console.log(err)
         })
     },
+    copyItem (item) {
+      this.tempItem = item
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product`
+      this.$http.post(api, { data: this.tempItem })
+        .then(res => {
+          if (res.data.success) {
+            this.getProducts()
+            this.emitter.emit('push-message', {
+              style: 'success',
+              title: 'Succeeded!',
+              content: 'Renewed Product List!'
+            })
+          } else {
+            this.emitter.emit('push-message', {
+              style: 'danger',
+              title: 'Failed',
+              content: 'There are some problems...'
+            })
+          }
+        })
+    },
     updateItem (item) {
-      console.log(item)
       this.tempItem = item
       let api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product`
       let httpMethod = 'post'

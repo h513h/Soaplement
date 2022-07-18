@@ -1,29 +1,18 @@
 <template>
     <Navbar></Navbar>
-    <div id="carousel" ref="carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <div class="carousel-inner vh-50">
-            <div class="carousel-item active vh-50" data-bs-interval="2000">
-                <img src="https://images.unsplash.com/photo-1578499177313-0416e8f509e6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
-                <div class="carousel-caption" @click.prevent="turnToProductsPage">
-                    <h2 class="font-monospace">Soaplement</h2>
-                </div>
+    <div id="carousel" class="carousel slide" data-bs-ride="carousel" ref="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active max-vh-70">
+                <img src="@/assets/images/banner1.png" class="d-block w-100" alt="banner">
             </div>
-            <div class="carousel-item vh-50" data-bs-interval="2000">
-                <img src="https://images.unsplash.com/photo-1557176286-97a841415173?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
-                <div class="carousel-caption" @click.prevent="turnToProductsPage">
-                    <h2 class="font-monospace">Soaplement</h2>
-                </div>
+            <div class="carousel-item max-vh-70">
+                <img src="@/assets/images/banner2.png" class="d-block w-100" alt="banner">
             </div>
-            <div class="carousel-item vh-50" data-bs-interval="2000">
-                <img src="https://images.unsplash.com/photo-1569715442753-2eef87d75db3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop" class="img-fluid" alt="picture">
-                <div class="carousel-caption" @click.prevent="turnToProductsPage">
-                    <h2 class="font-monospace">Soaplement</h2>
-                </div>
+            <div class="carousel-item max-vh-70">
+                <img src="@/assets/images/banner3.png" class="d-block w-100" alt="banner">
+            </div>
+            <div class="carousel-item max-vh-70">
+                <img src="@/assets/images/banner4.png" class="d-block w-100" alt="banner">
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
@@ -35,43 +24,66 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-    <div class="container overflow-auto py-5">
-        <h3 class="text-center font-monospace my-3 fs-1">Latest</h3>
-        <div class="row flex-nowrap">
-            <div class="col-5 col-md-4" v-for="item in newProducts" :key="item.id">
-                <div class="card border-0" @click.stop.prevent="goToProduct(item.id)">
-                    <div class="card-img-hover card-img-top position-relative">
-                        <img :src="item.mainImageUrl" class="img-fluid rounded-0" alt="product">
-                    </div>
-                    <div class="card-body p-4">
-                        <h4 class="card-title">{{item.title}}</h4>
-                        <p class="card-text">{{item.characteristic}}</p>
+    <div class="py-5">
+        <div class="container">
+            <h3 class="font-monospace my-3 fs-1">Latest</h3>
+            <hr class="mb-3">
+        </div>
+        <div class="container-fluid overflow-horizontal pt-3">
+            <div class="row flex-nowrap ps-5">
+                <div class="col-7 col-md-3" v-for="item in newProducts" :key="item.id">
+                    <div class="card border-0" @click.stop.prevent="goToProduct(item.id)">
+                        <div class="card-img-hover card-img-top pt-100" :style="backgroundImg(item.mainImageUrl)"></div>
+                        <div class="card-body p-2">
+                            <h4 class="card-title">{{item.title}}</h4>
+                            <p class="card-text">{{item.characteristic}}</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid py-5 p-0">
+    <div class="container">
+        <h3 class="font-monospace my-3 fs-1">Fresh & Natural ingredients</h3>
+        <hr class="mb-3">
+    </div>
+    <div class="container-fluid overflow-hidden pt-3">
         <div class="row align-items-start">
-            <div class="col-md-6 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-mint" style="background-image: url('https://images.unsplash.com/photo-1622576454275-729fbf6aa6eb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
-            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-lavender"  style="background-image: url('https://images.unsplash.com/photo-1445510491599-c391e8046a68?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
-            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-milk"  style="background-image: url('https://images.unsplash.com/photo-1446126102442-f6b2b73257fd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
+            <div class="col-md-6 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative" :style="backgroundImg(content1)" style="hover{background-color: black}">
+                <h3 class="content-text">Mint</h3>
+            </div>
+            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative" :style="backgroundImg(content2)">
+                <h3 class="content-text">Lavenders</h3>
+            </div>
+            <div class="col-6 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative"  :style="backgroundImg(content3)">
+                <h3 class="content-text">Milk</h3>
+            </div>
         </div>
         <div class="row">
-            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1560717789-0ac7c58ac90a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
-            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1507646871303-331b8f659227?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
-            <div class="col-4 col-md-2 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-flower"  style="background-image: url('https://images.unsplash.com/photo-1546842931-886c185b4c8c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
-            <div class="col-md-4 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative bg-size-hover-180 ingredient-herb"  style="background-image: url('https://images.unsplash.com/photo-1532092367580-3bd5bc78dd9d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop')"></div>
+            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative"  :style="backgroundImg(content4)">
+                <h3 class="content-text">Flowers</h3>
+            </div>
+            <div class="col-4 col-md-3 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative"  :style="backgroundImg(content5)">
+                <h3 class="content-text">Flowers</h3>
+            </div>
+            <div class="col-4 col-md-2 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative"  :style="backgroundImg(content6)">
+                <h3 class="content-text">Flowers</h3>
+            </div>
+            <div class="col-md-4 overflow-hidden p-0 vh-30 text-center text-light font-monospace img-hover-effect fs-3 position-relative"  :style="backgroundImg(content7)">
+                <h3 class="content-text">Herbs</h3>
+            </div>
         </div>
     </div>
-    <div class="container mb-5">
-        <div class="row justify-content-center align-items-stretch">
+    <div class="container py-5">
+        <h3 class="font-monospace my-3 fs-1">Feedback & Reviews</h3>
+        <hr class="mb-3">
+        <div class="row justify-content-center align-items-stretch pt-3">
             <div class="col-10 col-md-5 me-3">
                 <div class="row">
                     <img src="https://images.unsplash.com/photo-1618481212093-a0286ef0cc95" alt="review" class="img-fluid">
-                    <div class="text-center mt-3">
+                    <div class="text-center my-5">
                         <i class="fa-solid fa-quote-left fs-3"></i>
-                        <p>I love the Oatmeal & Honey bar which works great for me since I am allergic to many other soaps and scents! The shipping is very quick, too.<br> - Kay W.</p>
+                        <p>I love the Oatmeal & Honey bar which works great for me since I am allergic to many other soaps and scents! The shipping is very quick, too.<br> - Anna.</p>
                     </div>
                 </div>
             </div>
@@ -80,26 +92,44 @@
                     <div>
                         <img src="https://images.unsplash.com/photo-1595090475026-274ec9ef1753" alt="review" class="img-fluid">
                     </div>
-                    <div class="text-center mt-3">
+                    <div class="text-center my-5">
                         <i class="fa-solid fa-quote-left fs-3"></i>
-                        <p>I love the Oatmeal & Honey bar which works great for me since I am allergic to many other soaps and scents! The shipping is very quick, too.<br> - Kay W.</p>
+                        <p>Absolutely fantastic soap that all my family use. We all have sensitive skin, and these soaps are great and smell gorgeous. Love the idea of the box as it is zero waste. You get some really chunky bars and little bits of soap. The little bits of soap are really useful when travelling or cleaning. Thank you for despatching so quickly and in a really sturdy box, which I can keep all the soap bars/bits in until I need them. Will definitely be buy more from the shop!!<br> - Kay W.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-stretch pt-3">
+            <div class="col-10 col-md-5 me-3">
+                <div class="row">
+                    <img src="https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1529&q=80" alt="review" class="img-fluid">
+                    <div class="text-center my-5">
+                        <i class="fa-solid fa-quote-left fs-3"></i>
+                        <p>I love the Oatmeal & Honey bar which works great for me since I am allergic to many other soaps and scents! The shipping is very quick, too.<br> - Anna.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-10 col-md-5">
+                <div class="row flex-column flex-md-column-reverse">
+                    <div>
+                        <img src="https://images.unsplash.com/photo-1543364195-077a16c30ff3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fGZydWl0fGVufDB8MnwwfHw%3D&auto=format&fit=crop&w=900&q=60" alt="review" class="img-fluid">
+                    </div>
+                    <div class="text-center my-5">
+                        <i class="fa-solid fa-quote-left fs-3"></i>
+                        <p>Absolutely fantastic soap that all my family use. We all have sensitive skin, and these soaps are great and smell gorgeous. Love the idea of the box as it is zero waste. You get some really chunky bars and little bits of soap. The little bits of soap are really useful when travelling or cleaning. Thank you for despatching so quickly and in a really sturdy box, which I can keep all the soap bars/bits in until I need them. Will definitely be buy more from the shop!!<br> - Kay W.</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid p-5 bg-primary" style="background: url('https://images.unsplash.com/photo-1442458017215-285b83f65851') no-repeat center center fixed; background-size: cover;">
-        <div class="row justify-content-center">
-            <div class="col-10 col-md-5" v-if="!showCoupon">
-                <h4 class="mb-3 text-light">Subscribe Us to get the latest news!</h4>
+    <div class="container-fluid p-5 bg-primary" :style="backgroundImg(subscription)" style="background-attachment: fixed;">
+        <div class="row justify-content-center py-5">
+            <div class="col-10 col-md-5">
+                <h4 class="mb-3 text-light font-monospace">Subscribe Us to get the latest news!</h4>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" name="subscribe" placeholder="Please input your e-mail" aria-label="subscribe" aria-describedby="subscribe_btn">
-                    <button class="btn btn-primary" type="submit" id="subscribe_btn" @click="submitSubscribe">Subscribe</button>
+                    <button class="btn btn-primary" type="submit" id="subscribe_btn">Subscribe</button>
                 </div>
-            </div>
-            <div class="col-10 col-md-8 bg-warning" v-else>
-                <h4 class="text-center text-light">Thank you for subscription! Here is a special coupon for you.</h4>
-                <h4 class="text-center">Use <span class="fw-bold fst-italic font-monospace fs-3">10OFF</span>   to get 10% discount!</h4>
             </div>
         </div>
     </div>
@@ -115,19 +145,26 @@ export default {
   data () {
     return {
       carousel: {},
-      showCoupon: false
+      content1: require('@/assets/images/content1.png'),
+      content2: require('@/assets/images/content2.png'),
+      content3: require('@/assets/images/content3.png'),
+      content4: require('@/assets/images/content4.png'),
+      content5: require('@/assets/images/content5.png'),
+      content6: require('@/assets/images/content6.png'),
+      content7: require('@/assets/images/content7.png'),
+      subscription: require('@/assets/images/subscription.png')
     }
   },
   methods: {
     turnToProductsPage () {
       this.$router.push('/products')
     },
-    submitSubscribe () {
-      this.showCoupon = true
-      console.log(this.showCoupon)
-      setTimeout(() => {
-        this.showCoupon = false
-      }, (1000 * 60 * 5))
+    backgroundImg (url) {
+      return {
+        'background-image': 'url("' + url + '")',
+        'background-position': 'center center',
+        'background-size': 'cover'
+      }
     }
   },
   mounted () {

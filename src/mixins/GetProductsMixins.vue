@@ -4,6 +4,7 @@ export default {
     return {
       products: {},
       pagination: {},
+      categories: [],
       newProducts: {},
       product: {}
     }
@@ -16,6 +17,11 @@ export default {
           this.products = res.data.products.reverse()
           this.pagination = res.data.pagination
           this.newProducts = this.products.slice(0, 5)
+          const temCategory = this.products.map((index) => {
+            return index.category
+          })
+          this.categories = Array.from(new Set(temCategory)).sort()
+          console.log(this.categories)
         })
         .catch(err => {
           console.log(err)
