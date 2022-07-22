@@ -1,8 +1,8 @@
 <template>
-    <div class="col-6 col-md-4" v-for="(item, i) in products" :key="item.id">
+    <div class="col-6 col-md-4" v-for="(item, i) in displayItems" :key="item.id">
         <div class="card rounded-0 border-0 mb-4" @click.prevent="goToProduct(item.id)" role="button">
             <div class="card-img-hover card-img-top position-relative pt-100" :style="backgroundImg(item.mainImageUrl)"  @click.stop.prevent="goToProduct(item.id)">
-                <div class="fs-6 position-absolute bg-warning px-2 py-1 flag text-white" v-if="i<5">NEW</div>
+                <div class="fs-6 position-absolute bg-warning top-0 px-2 py-1 flag text-white" v-if="i<5">NEW</div>
                 <div class="fs-3 position-absolute end-0 me-2 wish" role="button" @click.stop.prevent="updateWishlist(item)" :class="{'text-danger':wishlistItemID.includes(item.id)}">♥</div>
             </div>
             <div class="card-body pb-0">
@@ -28,10 +28,22 @@ import AddItemToCart from '@/mixins/AddItemToCartMixins.vue'
 
 export default {
   mixins: [GetProducts, AddItemToCart],
+  props: ['search', 'display-category'],
   data () {
     return {
       wishlist: [],
       wishlistItemID: []
+    }
+  },
+  computed: {
+    displayItems () {
+      return this.products.filter(item => {
+        if (this.displayCategory) {
+          return item.category.match(this.displayCategory)
+        } else {
+          return item.title.match((new RegExp(this.search, 'ig'))) || item.category.match((new RegExp(this.search, 'ig')))
+        }
+      })
     }
   },
   methods: {
@@ -52,7 +64,6 @@ export default {
       this.wishlistItemID = this.wishlist.map((index) => {
         return index.id
       })
-      this.emitter.emit('wishlisting', this.wishlist)
     }
   }
 }

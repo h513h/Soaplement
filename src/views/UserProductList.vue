@@ -15,14 +15,14 @@
         <div class="row justify-content-end">
           <div class="col-md-2">
             <ul class="list-group list-group-flush flex-row flex-md-column mb-3">
-              <li class="list-group-item border-bottom mt-2 font-monospace active" role="button">ALL PRODUCTS</li>
-              <li class="list-group-item border-bottom mt-2 font-monospace" role="button" v-for="(category, i) in categories" :key="i">{{category}}</li>
+              <li class="list-group-item border-bottom py-2 me-2 font-monospace"  role="button" @click="searchCategory()" :class="{'active':!this.displayCategory}">ALL</li>
+              <li class="list-group-item border-bottom py-2 me-2 font-monospace" role="button" v-for="(category, i) in categories" :key="i" :class="{'active':this.displayCategory === category}" @click="searchCategory(category)">{{category}}</li>
             </ul>
-            <input type="text" placeholder="Search" class="form-control" aria-describedby="search" v-model="search">
+            <input type="text" placeholder="Search" class="form-control mb-4" aria-describedby="search" v-model="search">
           </div>
           <div class="col-md-10">
             <div class="row align-items-stretch">
-              <Card/>
+              <Cards :search="search" :display-category="displayCategory"/>
             </div>
           </div>
         </div>
@@ -34,11 +34,23 @@
 
 <script>
 import NavbarAndFooter from '@/mixins/NavbarAndFooterMixin.vue'
-import Card from '@/components/ItemCard.vue'
 import GetProducts from '@/mixins/GetProductsMixins.vue'
+import AddItemToCart from '@/mixins/AddItemToCartMixins.vue'
+import Cards from '@/components/ItemCard.vue'
 
 export default {
-  mixins: [NavbarAndFooter, GetProducts],
-  components: { Card }
+  mixins: [NavbarAndFooter, GetProducts, AddItemToCart],
+  components: { Cards },
+  data () {
+    return {
+      search: '',
+      displayCategory: ''
+    }
+  },
+  methods: {
+    searchCategory (category) {
+      this.displayCategory = category
+    }
+  }
 }
 </script>

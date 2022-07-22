@@ -7,7 +7,12 @@
         <div class="row justify-content-center mb-sm-3">
             <div class="col-lg-8">
               <button type="button" class="btn btn-link p-0 mb-3 mb-sm-5" @click.prevent="backToLastPage"><i class="fa-solid fa-arrow-left"></i></button>
-              <div>
+              <h2 class="mb-3">Wish List</h2>
+              <div  v-if="wishlist" class="vh-50 mt-5 d-flex justify-content-center align-items-center" style="background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop') center center">
+                <h3 class="text-white">There is nothing in your wish list...</h3>
+                <button class="btn btn-link text-white p-0 fs-3">Let's go to shopping</button>
+              </div>
+              <div v-else>
                 <isLoading :active="isLoading"></isLoading>
                 <div class="table-responsive">
                   <table class="table">
@@ -16,25 +21,26 @@
                         <th scope="col"></th>
                         <th scope="col">Item</th>
                         <th scope="col">Price</th>
-                        <th scope="col">Qty</th>
                         <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
-                      <!-- <tr v-for="item in wishlist" :key="item.id">
-                        <td class="align-middle"><button type="button" class="btn btn-delete border-0 p-0 me-3 align-self-center" @click.prevent="deleteItem(item.id)"><i class="fa-solid fa-xmark"></i></button></td>
-                        <td class="align-middle">{{item.product.title}}</td>
-                        <td class="align-middle">{{item.product.price}}</td>
-                        <td class="align-middle">{{item.qty}}</td>
+                      <tr v-for="item in wishlist" :key="item.id">
+                        <td class="align-middle"><button type="button" class="btn btn-delete border-0 p-0 me-3 align-self-center" @click.prevent="updateWishlist(item.id)"><i class="fa-solid fa-xmark"></i></button></td>
+                        <td class="align-middle">{{item.title}}</td>
+                        <td class="align-middle">{{item.price}}</td>
                         <td class="p-0">
                           <div class="d-grid">
-                            <button class="btn btn-link text-secondary btn-sm text-decoration-none mb-2" @click.prevent="renewQty(true, item.qty, item.id, item.product_id)"><i class="fa-solid fa-plus"></i></button>
-                            <button class="btn btn-link text-secondary btn-sm text-decoration-none" @click.prevent="renewQty(false, item.qty, item.id, item.product_id)"><i class="fa-solid fa-minus"></i></button>
+                            <button class="btn btn-link text-secondary btn-sm text-decoration-none mb-2" @click.prevent="renewQty(true, item.qty, item.id, item.product_id)"><i class="fa-solid fa-plus"></i></button><button type="button" class="btn btn-light rounded-0" @click.stop.prevent="addCart(item.id)" :class="{'disabled' : this.status.loadingItem === item.id}">Add to cart</button>
                           </div>
                         </td>
-                      </tr> -->
+                      </tr>
                     </tbody>
                   </table>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <button class="btn btn-link text-secondary p-0 rounded-1" @click.prevent="turnToProductsPage">Shopping more</button>
+                  <button class="btn btn-success rounded-1" @click.prevent="goToReceipt">Go to Next</button>
                 </div>
               </div>
             </div>
@@ -62,7 +68,7 @@ export default {
   components: { Card },
   data () {
     return {
-      wishlist: {}
+      wishlist: []
     }
   },
   methods: {
@@ -74,12 +80,6 @@ export default {
     turnToProductsPage () {
       this.$router.push('/products')
     }
-  },
-  created () {
-    this.emitter.on('wishlisting', (wishlist) => {
-      this.wishlist = wishlist
-    })
-    console.log(this.wishlist)
   }
 }
 </script>

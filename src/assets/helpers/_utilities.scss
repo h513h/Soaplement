@@ -77,7 +77,6 @@
 }
 .wish:hover{
     animation: jumping 1s infinite;
-    color: $danger
 }
 
 @keyframes jumping{
@@ -90,9 +89,4 @@
     100%{
         top: 0
     }
-}
-
-.flag{
-    top: -10px;
-    left: -10px;
 }

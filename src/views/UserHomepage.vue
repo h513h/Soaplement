@@ -30,13 +30,12 @@
             <hr class="mb-3">
         </div>
         <div class="container-fluid overflow-horizontal pt-3">
-            <div class="row flex-nowrap ps-5">
-                <div class="col-7 col-md-3" v-for="item in newProducts" :key="item.id">
+            <div class="row flex-nowrap ps-5 py-3">
+                <div class="col-7 col-md-3 me-3" v-for="item in newProducts" :key="item.id">
                     <div class="card border-0" @click.stop.prevent="goToProduct(item.id)">
                         <div class="card-img-hover card-img-top pt-100" :style="backgroundImg(item.mainImageUrl)"></div>
                         <div class="card-body p-2">
-                            <h4 class="card-title">{{item.title}}</h4>
-                            <p class="card-text">{{item.characteristic}}</p>
+                            <h4 class="card-title fst-italic">{{item.title}}</h4>
                         </div>
                     </div>
                 </div>
